@@ -3,7 +3,7 @@
 import json
 import requests
 import pytest
-domen_test = "https://ia-test.egisz.rosminzdrav.ru"
+domen_test = "https://ia.rt-eu.ru"
 
 domen = domen_test
 api_metods = ["/realms/master/metrics/clients_count",
