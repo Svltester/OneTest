@@ -20,7 +20,7 @@ def test_get_new_api(api_metod):
     payload = {}
     headers = {}
 
-    response = requests.request(method="GET", url=url, headers=headers, data=payload, verify='russian_trust_root_ca.crt')
+    response = requests.request(method="GET", url=url, headers=headers, data=payload, verify=True)
     response.encoding = "utf-8"
     assert response.status_code == 200, "Неправильный ответный код"
 
