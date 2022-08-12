@@ -8,21 +8,10 @@ def test_am():
 
         # Open new page
         page = context.new_page()
-
         page.goto("https://ia-test.egisz.rosminzdrav.ru/webadmin")
-
         # Click text=Вход >> nth=0
-        page.locator("text=Вход").first.click()
-
-        # Click text=Вход через ЕСИА (тестовая)
-        page.locator("text=Вход через ЕСИА (тестовая)").click()
-        page.wait_for_url("https://esia-portal1.test.gosuslugi.ru/login/")
-        # Click text=Главная >> nth=1
-        assert page.locator("text=Единая система<br/> идентификации и аутентификации").is_visible()
-        # Click text=Единая система<br/> идентификации и аутентификации
-        page.locator("text=Единая система<br/> идентификации и аутентификации").click()
-
-
+        assert page.locator("text=Вход >> nth=0").is_visible(
+        
         # ---------------------
         context.close()
         browser.close()
