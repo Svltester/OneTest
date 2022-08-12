@@ -26,19 +26,19 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install truststore
+        # pip install truststore
         # Use '--use-feature=truststore' flag to enable
-        pip install SomePackage --use-feature=truststore
+        # pip install SomePackage --use-feature=truststore
         pip install flake8 pytest
         
         
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         playwright install
         
-        pip config set global.cert russian_trust_root_ca.crt
-        pip config list
-        conda config --set ssl_verify russian_trust_root_ca.crt
-        conda config --show ssl_verify
+        # pip config set global.cert russian_trust_root_ca.crt
+        # pip config list
+        # conda config --set ssl_verify russian_trust_root_ca.crt
+        # conda config --show ssl_verify
         
     - name: Lint with flake8
       run: |
