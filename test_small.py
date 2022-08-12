@@ -10,7 +10,7 @@ def test_am():
         page = context.new_page()
         page.goto("https://ia-test.egisz.rosminzdrav.ru/webadmin")
         # Click text=Вход >> nth=0
-        assert page.locator("text=Вход >> nth=0").is_visible(
+        assert page.locator("text=Вход >> nth=0").is_visible()
         
         # ---------------------
         context.close()
