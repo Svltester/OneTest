@@ -2,7 +2,7 @@ import os
 
 
 class my_secrets:
-    login = os.environ['USER']
+    login = os.environ['A_USER_LOGIN']
 
 
 def test_env():
