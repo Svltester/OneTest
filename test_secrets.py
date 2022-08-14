@@ -6,5 +6,5 @@ class my_secrets:
 
 
 def test_env():
-    assert len(my_secrets.login) != 0
+    # assert len(my_secrets.login) != 0
     assert len(my_secrets.login) == len("qwertyuiop")
