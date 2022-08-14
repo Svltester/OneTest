@@ -12,6 +12,9 @@ on:
 permissions:
   contents: read
 
+env:
+        A_USER_LOGIN: ${{ secrets.A_USER_LOGIN}} 
+
 jobs:
   build:
 
@@ -26,9 +29,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        # pip install truststore
-        # Use '--use-feature=truststore' flag to enable
-        # pip install SomePackage --use-feature=truststore
+        
         pip install flake8 pytest
         
         
@@ -45,6 +46,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        env:
-        A_USER_LOGIN: ${{ secrets.A_USER_LOGIN}} # < Let Secrets handle your keys
+        
         pytest -v test_secrets.py
