@@ -8,5 +8,5 @@ class my_secrets:
 
 def test_env():
     assert len(my_secrets.login1) != 0
-    assert len(my_secrets.login1) == len("qwertyuiop")
+    assert my_secrets.login1 == "autotester"
     assert len(my_secrets.login2) == 9
