@@ -35,8 +35,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         playwright install
         
-        env:
-        TP_API_KEY: ${{ secrets.A_USER_LOGIN}} # < Let Secrets handle your keys
+        
         
     - name: Lint with flake8
       run: |
@@ -46,4 +45,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
+        env:
+        A_USER_LOGIN: ${{ secrets.A_USER_LOGIN}} # < Let Secrets handle your keys
         pytest -v test_secrets.py
