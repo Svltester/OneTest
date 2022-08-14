@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 env:
-        A_USER_LOGIN: ${{ secrets.A_USER_LOGIN}} 
+        A_USER_LOGIN: ${{ SECRETS.A_USER_LOGIN}} 
 
 jobs:
   build:
